@@ -1,0 +1,12 @@
+﻿body {
+}
+
+@font-face {
+	font-family: "BebasNeue";
+	src: url("/fonts/BebasNeue.otf") format('opentype');	
+}
+
+.customh1 {
+	font-family:BebasNeue;
+	font-size: 80px;
+}

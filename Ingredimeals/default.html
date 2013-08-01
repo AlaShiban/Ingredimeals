@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ingredimeals</title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.2.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+    <script src="Scripts/jquery-2.0.2.js"></script>
+    <script src="App.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/bankersbox.js"></script>
+    <script src="Scripts/underscore.js"></script>
+    <!-- Ingredimeals references -->
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="/js/default.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            angular.bootstrap(document);
+        });
+
+        var db;
+
+        WinJS.xhr({ url: "db/recipes.txt" }).then(function (response) {
+            var content = "";
+            content = response.responseText;
+
+            db = new RecipesDB(content);
+
+
+        });
+
+
+    </script>
+
+
+</head>
+<body ng-controller="AppController">
+    <div id="AppContainer" style="margin-left: 79px; margin-top: 35px;" >
+		<h1 class="customh1">Ingredimeals</h1>
+		<input class="ingredientsSearch" type="text" placeholder="Add Ingredients" />
+		<input type="button" value="Search" ng-click="vm.UpdateStuff()" />
+		<div id="SearchResults" style="overflow-y:scroll; height:1500px;">
+            <div ng-repeat="recipe in recipesFound">
+                <span class="span5"> 
+                    <span style="font-family:BebasNeue; font-size:30px;">{{recipe.name}}</span> - <a href="{{recipe.url}}">{{recipe.url}}</a>
+                </span>
+                <img class="span4" src="{{recipe.image}}" />
+                
+
+            </div>
+
+		</div> 
+
+	</div>
+</body>
+</html>
