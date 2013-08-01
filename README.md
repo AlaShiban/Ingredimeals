@@ -1,4 +1,4 @@
-Ingredimeals
+Ingredimeals [[Video Tutorial Here](http://www.alashiban.com/building-a-windows-8-1-app-using-typescript-and-opensource/)]
 ============
 I put together a 17 minute video that gets you started with writing a native Win8.1 app using HTML, CSS, JavaScript, TypeScript, AngularJS, Bootstrap, underscore, BankersBox and jQuery. 
 
